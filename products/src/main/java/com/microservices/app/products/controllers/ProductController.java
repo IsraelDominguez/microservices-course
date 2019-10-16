@@ -25,7 +25,7 @@ public class ProductController {
 
 
     //Otra manera de coger valores del properties
-    @Value("${server.port")
+    @Value("${server.port}")
     private Integer port;
 
     @GetMapping("/products/list")
@@ -40,7 +40,7 @@ public class ProductController {
     public Product show(@PathVariable Long id) {
         Product product = productService.findById(id).orElse(null);
 
-        product.setPort(Integer.parseInt(env.getProperty("local.server.port")));
+        product.setPort(port);
 
         return product;
     }
