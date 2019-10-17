@@ -37,10 +37,16 @@ public class ProductController {
     }
 
     @GetMapping("/products/show/{id}")
-    public Product show(@PathVariable Long id) {
+    public Product show(@PathVariable Long id) throws Exception {
         Product product = productService.findById(id).orElse(null);
 
         product.setPort(port);
+
+        //Test Hystrix
+        boolean ok = false;
+        if (ok == false) {
+            throw new Exception("Error");
+        }
 
         return product;
     }
