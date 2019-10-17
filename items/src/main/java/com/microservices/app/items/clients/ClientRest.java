@@ -10,11 +10,11 @@ import java.util.List;
 @FeignClient(name="products-service")
 public interface ClientRest {
 
-    @GetMapping("/products/list")
+    @GetMapping("/list")
     List<Product> findAll();
 
 
-    @GetMapping("/products/show/{id}")
+    @GetMapping("/show/{id}")
     Product show(@PathVariable Long id);
 
 }
