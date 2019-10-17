@@ -43,10 +43,10 @@ public class ProductController {
         product.setPort(port);
 
         //Test Hystrix
-        boolean ok = false;
-        if (ok == false) {
-            throw new Exception("Error");
-        }
+//        boolean ok = false;
+//        if (ok == false) {
+//            throw new Exception("Error");
+//        }
 
         return product;
     }
