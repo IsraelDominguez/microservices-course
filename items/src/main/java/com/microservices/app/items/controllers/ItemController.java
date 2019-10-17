@@ -22,13 +22,13 @@ public class ItemController {
     private IItemService itemService;
 
 
-    @GetMapping("/items/list")
+    @GetMapping("/list")
     public List<Item> list() {
         return itemService.findAll();
     }
 
     @HystrixCommand(fallbackMethod = "ifErrorExist")
-    @GetMapping("/items/show/{id}/amount/{amount}")
+    @GetMapping("/show/{id}/amount/{amount}")
     public Item show(@PathVariable Long id, @PathVariable Integer amount) {
         return itemService.findById(id, amount);
     }

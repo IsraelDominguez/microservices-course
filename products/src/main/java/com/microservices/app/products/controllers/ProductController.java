@@ -28,7 +28,7 @@ public class ProductController {
     @Value("${server.port}")
     private Integer port;
 
-    @GetMapping("/products/list")
+    @GetMapping("/list")
     public List<Product> list() {
         return productService.findAll().stream().map(p -> {
             p.setPort(port);
@@ -36,7 +36,7 @@ public class ProductController {
         }).collect(Collectors.toList());
     }
 
-    @GetMapping("/products/show/{id}")
+    @GetMapping("/show/{id}")
     public Product show(@PathVariable Long id) throws Exception {
         Product product = productService.findById(id).orElse(null);
 
