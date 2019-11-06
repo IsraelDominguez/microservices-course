@@ -49,11 +49,11 @@ public class ProductController {
 //        }
 
         // To test Timeouts
-        try {
-            Thread.sleep(2000L);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(2000L);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
 
         return product;
