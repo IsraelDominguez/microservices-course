@@ -42,11 +42,19 @@ public class ProductController {
 
         product.setPort(port);
 
-        //Test Hystrix
+        //Test Hystrix Error
 //        boolean ok = false;
 //        if (ok == false) {
 //            throw new Exception("Error");
 //        }
+
+        // To test Timeouts
+        try {
+            Thread.sleep(2000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
         return product;
     }
